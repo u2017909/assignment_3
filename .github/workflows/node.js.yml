@@ -25,13 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-      working-directory: myreact
     - run: npm run build --if-present
-      working-directory: myreact
     - run: npm test
-      working-directory: myreact
     - name: Deploy
-      working-directory: myreact
       run: |
        git config --global user.name $user_name
        git config --global user.email $user_email
